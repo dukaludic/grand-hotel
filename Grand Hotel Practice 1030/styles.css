@@ -1,0 +1,667 @@
+html {
+  font-size: 62.5%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.sidebar {
+  width: 8rem;
+  height: 100vh;
+  background-color: #eeeeee;
+  display: flex;
+  flex-direction: column;
+  justify-content:space-between;
+  align-items: center;
+  z-index: 300;
+}
+
+.menu-btn {
+  margin-top: 2rem;
+  cursor: pointer;
+}
+
+
+.line {
+  height: .2rem;
+  width: 2.5rem;
+  background-color: #222;
+  margin-bottom: .6rem;
+}
+
+.line-1, .line-3 {
+  width: 1.8rem;
+  transition: all .3s;
+
+}
+
+.menu-btn:hover .line {
+  width: 2.5rem;
+}
+
+/* ????????????? */
+
+.social-media {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  height: 20rem;
+  justify-content: space-between;
+  align-content: center;
+}
+
+.social-media a {
+  font-size: 2rem;
+  color: #777777;
+  transition: color .3s;
+}
+
+.header-search {
+  z-index: 200;
+}
+
+.copyright {
+  z-index: 200;
+  color: white;
+}
+
+.social-media, .icon:hover {
+  color: #deaa86;
+}
+
+.year p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+  color: #777777;
+}
+
+.navigation {
+  display: flex;
+  z-index: 200;
+  position: fixed;
+}
+
+.navbar {
+  background: url("img/nav-bg.jpeg");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 40rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  left: -40rem;
+  transition: left .8s cubic-bezier(1,0,0,1);
+}
+
+.navbar::after {
+  content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to top, rgba(34, 32, 41, 1), rgba(34, 32, 41, .8));
+    opacity: .7;
+    z-index: 0;
+}
+
+.search-bar {
+  width: 30rem;
+  height: 3.5rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 2rem;
+  border: none;
+  outline: none;
+  letter-spacing: .1rem;
+  padding-left: 2rem;
+  border: 1px solid grey;
+  color: grey;
+  transition: background-color .3s;
+  font-family: 'Montserrat', sans-serif;
+  z-index: 100;
+}
+
+.search-bar:focus {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: #deaa86;
+}
+
+.menu li {
+  font-family: 'Montserrat', sans-serif;
+  list-style: none;
+  padding: 0;
+  font-size: 1.8rem;
+  margin-bottom: 3rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  color: white;
+  font-weight: 400;
+  z-index: 100;
+  transition: color .3s;
+  position: relative;
+}
+
+.menu li::before {
+  content: "";
+  height: .1rem;
+  width: 0rem;
+  background-color: #deaa86;
+  position: absolute;
+  top: 1rem;
+  left: -4rem;
+  transition: width 0.3s cubic-bezier(1,0,0,1);
+}
+
+.menu li::after {
+  content: "";
+  height: .1rem;
+  width: 0rem;
+  background-color: #deaa86;
+  position: absolute;
+  top: 1rem;
+  right: -4rem;
+  transition: width 0.3s cubic-bezier(1,0,0,1);
+}
+
+.menu li:hover::after {
+  width: 3rem;
+}
+.menu li:hover::before {
+  width: 3rem;
+}
+
+.menu li:hover {
+  color: #deaa86;
+}
+
+.menu, .menu-ul {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.navbar h1 {
+  font-family: 'Josefin Sans';
+  font-size: 4rem;
+  text-align: center;
+  color: #deaa86;
+  z-index: 300;
+}
+
+.search {
+  position: relative;
+  z-index: 200;
+}
+
+
+.search-btn {
+  right: 1rem;
+  top: .8rem;
+  position: absolute;
+  border: none;
+  color: #deaa86;
+  background: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 200;
+}
+
+.search-btn:focus {
+  outline: none;
+}
+
+.checkbox:checked ~ .navbar {
+  left: 0;
+}
+
+.checkbox {
+  display: none;
+}
+
+.checkbox:checked ~ .sidebar .line-1 {
+  transform: rotate(-405deg) translate(-5px, 6px);
+  width: 2.5rem;
+}
+
+.checkbox:checked ~ .sidebar .line-2 {
+  opacity: 0;
+}
+
+
+.checkbox:checked ~ .sidebar .line-3 {
+  transform: rotate(405deg) translate(-5px, -6px);
+  width: 2.5rem;
+}
+
+.header-wrapper {
+  margin-left: 8rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)),
+  url("img/header-1.jpeg") no-repeat;
+  height: 100vh;
+  background-position: center;
+}
+
+.header {
+  display: flex;
+}
+
+.grand-hotel {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 2rem;
+  color: #deaa86;
+  line-height: 2.7rem;
+}
+
+.banner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 65rem;
+}
+
+.banner-headline {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 4rem;
+  color: white;
+  padding-bottom: 0;
+  line-height: 0;
+  animation: anim 2s;
+}
+
+.banner-paragraph {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 4rem;
+  color: white;
+  padding-top: 0;
+  animation: anim 2s 1s backwards;
+}
+
+.banner-btn {
+  border: none;
+  padding: 1rem 2.5rem;
+  width: 21rem;
+  font-size: 2rem;
+  letter-spacing: .1rem;
+  border-radius: 10rem;
+  outline: none;
+  background: linear-gradient(to right, gold, goldenrod);
+  animation: anim 2s 1.5s backwards;
+}
+
+.banner-btn:hover {
+  background: linear-gradient(to left, gold, goldenrod);
+  cursor: pointer;
+}
+
+.banner-btn:active {
+  transform: translateY(.2rem);
+}
+
+@keyframes anim {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.about-us-wrapper {
+  margin-left: 8rem;
+  display: flex;
+  background: #e5e5e5;
+}
+
+.about-us-section {
+  flex: 1;
+  padding: 10rem;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.about-us-images {
+  flex: 1;
+  position: relative;
+}
+
+.images {
+  height: 20rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  box-shadow: 2rem 2rem 3rem rgba(0, 0, 0, 0.5);
+  border: .2rem solid #deaa86;
+  border-radius: .5rem;
+  margin-top: 5rem;
+}
+
+.image-1 {
+  transform: translate(-20%, -90%);
+}
+
+.image-2 {
+  transform: translate(-70%, -70%);
+}
+
+.image-3 {
+  transform: translate(-50%, -50%);
+}
+
+.image-4 {
+  transform: translate(-30%, -30%);
+}
+
+.about-us-headline {
+  font-size: 3rem;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 100;
+  color: #777;
+}
+
+.small-underline {
+  width: 10rem;
+  height: .1rem;
+  background-color: #b85a1b;
+  margin: 0 auto;
+}
+
+.big-underline {
+  width: 25rem;
+  height: .1rem;
+  background-color: #b85a1b;
+  margin: 1rem auto;
+}
+
+.about-us-grand-hotel h1 {
+  font-size: 4rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  color: #b85a1b;
+}
+
+.about-us-paragraph {
+  font-size: 2rem;
+  font-style: italic;
+  font-family: 'Montserrat',sans-serif;
+  font-weight: 300;
+}
+
+.about-us-btn {
+  width: 15rem;
+  height: 4rem;
+  background: none;
+  outline: none;
+  border: 1px solid #deaa86;
+  color: #deaa86;
+  cursor: pointer;
+  margin-top: 4rem;
+}
+
+.btn-arrow {
+  margin-left: 1rem;
+  transition: margin-left .3s;
+}
+
+.about-us-btn:hover .btn-arrow {
+  margin-left: 1.5rem;
+}
+
+.rooms {
+  margin-left: 8rem;
+}
+
+.common-heading {
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 4rem;
+  color: #b85a1b;
+  font-weight: 300;
+}
+
+.common-header .big-underline {
+  margin-bottom: 10rem;
+}
+
+.rooms-cards-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  color: white;
+
+}
+
+.room-card {
+  width: 60rem;
+  background-color: #15141b;
+  margin: 10rem;
+  box-shadow: 1rem 1rem 3rem rgba(0,0,0,.7);
+}
+
+.room-image {
+  width: 100%;
+}
+
+.room-card-content {
+  padding: 3rem;
+}
+
+.room-card-heading {
+  font-family: 'Montserrat',sans-serif;
+  font-size: 3rem;
+  margin: 0;
+  font-weight: 300;
+}
+
+.room-card-paragraph {
+  font-size: 1.5rem;
+  color: #6d6d6e;
+}
+
+.price-and-button-wrapper {
+  display: flex;
+}
+
+.room-price {
+  font-size: 5rem;
+  text-align: right;
+  font-weight: 300;
+  color: #deaa86;
+  margin-top: 5rem;
+  flex: 1;
+}
+
+.room-card-btn {
+  width: 15rem;
+  height: 5rem;
+  color: #b85a1b;
+  outline: none;
+  border: .1rem solid #b85a1b;
+  background: transparent;
+  border-radius: 10rem;
+  margin-top: 5.5rem;
+  /* flex: 1; */
+}
+
+.rooms-btn-wrapper {
+  text-align: center;
+}
+
+.rooms-btn {
+  width: 20rem;
+  height: 5rem;
+  background: none;
+  outline: none;
+  border: 1px solid #deaa86;
+  color: #deaa86;
+  cursor: pointer;
+  margin: 4rem 0;
+  transition: all .3s;
+  text-transform: uppercase;
+}
+
+.rooms-btn:hover {
+  color: white;
+  background-color: #deaa86;
+}
+
+.customers-section {
+  margin-left: 8rem;
+  margin-top: 10rem;
+  background-color: #15141b;
+}
+
+.customer-paragraph {
+  margin: 0 auto 10rem auto;
+  font-size: 2rem;
+  color: white;
+  width: 50%;
+  text-align: center;
+}
+
+.customers-section .common-header {
+  padding-top: 10rem;
+}
+
+.customer-reviews {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.customer-card {
+  background-color: white;
+  display: flex;
+  height: 20rem;
+  width: 40%;
+  margin-bottom: 10rem;
+}
+
+.customer-image img {
+  width: 25rem;
+  margin-left: -1rem;
+}
+
+.customer-image {
+  margin: auto 0;
+}
+
+.customer-info {
+  padding: 2rem;
+}
+
+.customer-fullname {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  font-size: 3rem;
+  margin: 0 0 1rem 0;
+}
+
+.customer-paragraph-1 {
+  margin-top: 0;
+  font-size: 1.5rem;
+  color: #deaa86;
+}
+
+.customer-paragraph-2 {
+  font-size: 1.5rem;
+}
+
+.footer {
+  margin-left: 8rem;
+}
+
+.main-part {
+  display: flex;
+  justify-content: space-around;
+  background-color: #1c1c1c;
+  padding: 5rem 5rem;
+}
+
+/* .info-list {
+  flex: 1;
+}
+
+.explore-list {
+  flex: 1;
+}
+
+.sign-up {
+  flex: 1;
+}
+
+.gallery {
+  flex: 1;
+} */
+
+.footer-header {
+  font-size: 3rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  color: goldenrod;
+  margin-bottom: 4rem;
+}
+
+.footer-list {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-list a {
+  text-decoration: none;
+  color: #ddd;
+  margin: 0;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: 300;
+}
+
+.footer-list li {
+  margin-bottom: 2rem;
+}
+
+.sign-up-form {
+  display: flex;
+}
+
+.sign-up-btn {
+  padding: 1.5rem;
+  background-color: #b85a1b;
+  outline: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.email-input {
+  width: 30rem;
+  outline: none;
+  font-size: 1.5rem;
+  padding-left: 1rem;
+}
+
+.gallery-images {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 36rem;
+}
+
+.gallery-image {
+  width: 11rem;
+  padding: 0.2rem;
+  transition: transform .5s;
+}
+
+.gallery-image-wrapper {
+  overflow: hidden;
+}
+
+.gallery-image:hover {
+  transform: scale(1.3);
+}
